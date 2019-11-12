@@ -1,4 +1,6 @@
-﻿namespace Garage1._0
+﻿using System;
+using System.Collections.Generic;
+namespace Garage1._0
 {
     public class Vehicle : IVehicle
     {
@@ -14,19 +16,11 @@
                 this.NoOfWheels = noofwheels;
             }
 
-            public void ParkVehicle(string regno, string color, int noofwheels)
-            { 
-                 
-        
-        
-            }
-            
-            public void UnparkVehicle(string regno)
-            { 
-
-
-            }
-
+        public virtual string Toprint()
+        {
+            return $"Regno: {Regno} Color: {Color} No Of Wheels: {NoOfWheels} ";
+        }
+   
         
     }
 }
