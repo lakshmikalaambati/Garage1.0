@@ -20,6 +20,7 @@ namespace Garage1._0
 
                 this.maxcapacity = Math.Max(0, maxcapacity);
                 vehicles = new List<Vehicle>(capacity);
+                Console.WriteLine("In garage");
 
             }
 
@@ -51,16 +52,16 @@ namespace Garage1._0
 
             
 
-            public void WriteAll(Action<T> action)
-            {
+            //public void WriteAll(Action<T> action)
+            //{
 
-                vehicles.ForEach(i => action.Invoke(i));
-                //foreach (var item in list)
-                //{
-                //    action.Invoke(item);
-                //}
+            //    vehicles.ForEach(i => action.Invoke(i));
+            //    //foreach (var item in list)
+            //    //{
+            //    //    action.Invoke(item);
+            //    //}
 
-            }
+            //}
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
         

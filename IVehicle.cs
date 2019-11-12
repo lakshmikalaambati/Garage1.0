@@ -1,9 +1,11 @@
-﻿namespace Garage1._0
+﻿using System;
+using System.Collections.Generic;
+
+namespace Garage1._0
 {
     internal interface IVehicle
     {
 
-        public void ParkVehicle(string regno, string color, int noofwheels);
-        public void UnparkVehicle(string regno);
+         string Toprint();
     }
 }

@@ -12,9 +12,9 @@ namespace Garage1._0
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Welcome to Garage ");
+            Console.WriteLine("Welcome to Garage Management System ");
 
-            Garage.run();
+            UI.Run();
 
 
 

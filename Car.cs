@@ -9,5 +9,10 @@
 
             this.Fueltype = fueltype;
         }
+
+        public  override string Toprint()
+        {
+            return base.Toprint() + "Fueltype: {Fueltype}";
+        }
     }
 }
