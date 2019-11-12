@@ -18,7 +18,7 @@ namespace Garage1._0
 
         internal void ParkVehicle(string vehicletype,string regno,string color,int noofwheels,int noofengines)
         {
-            vehicles.Add(new vehicletype( )
+            vehicles.Add(new Airplane(regno, color, noofwheels, noofengines));
         }
     }
 }
