@@ -54,9 +54,9 @@ namespace Garage1._0
                         ParkVehicleToGarage(garagehandler);
                         break;
 
-                    //    case '2':
-                    //        UnParkVehicleToGarage();
-                    //        break;
+                    case '2':
+                        UnParkVehicleToGarage(garagehandler);
+                        break;
 
                     //    case '3':
                     //        ListAllVehiclesParked();
@@ -86,6 +86,13 @@ namespace Garage1._0
 
         }
 
+        private static void UnParkVehicleToGarage(GarageHandler garagehandler)
+        {
+            Console.WriteLine("Please Specify which Vehicle to be unParked");
+            string regno = Console.ReadLine();
+            garagehandler.UnParkVehicle(regno);
+        }
+
         private static void ParkVehicleToGarage(GarageHandler garagehandler)
         {
             Console.WriteLine("Please Specify which Vehicle to be Parked" +
@@ -108,31 +115,38 @@ namespace Garage1._0
             {
                 case "airplane":
                     Console.WriteLine("Please specify number of Engines");
-                    string noofengines = Console.ReadLine();
-                    garagehandler.ParkVehicle(Vehicletype,regNo,color,noofwheels, noofengines);
+                    string noofengines =Console.ReadLine();
+                    var airplane = new Airplane(regNo, color, int.Parse(noofwheels), int.Parse(noofengines));
+                    garagehandler.ParkVehicle(airplane);
+                    
                     break;
 
                 case "motorcycle":
                     Console.WriteLine("Please specify CylinderVolume");
                     string cylindervolume = Console.ReadLine();
-
+                    var motorcycle = new Motorcycle(regNo, color, int.Parse(noofwheels), int.Parse(cylindervolume));
+                    garagehandler.ParkVehicle(motorcycle);
                     break;
 
                 case "car":
                     Console.WriteLine("Please specify FuelType");
                     string fueltype = Console.ReadLine();
-
+                    var car = new Car(regNo, color, int.Parse(noofwheels), fueltype);
+                    garagehandler.ParkVehicle(car);
                     break;
 
                 case "bus":
                     Console.WriteLine("Please specify No of Seats");
                     string noofseats = Console.ReadLine();
-
+                    var bus = new Bus(regNo, color, int.Parse(noofwheels), int.Parse(noofseats));
+                    garagehandler.ParkVehicle(bus);
                     break;
 
                 case "boat":
                     Console.WriteLine("Please specify Length");
                     string length = Console.ReadLine();
+                    var boat = new Boat(regNo, color, int.Parse(noofwheels), int.Parse(length));
+                    garagehandler.ParkVehicle(boat);
                     break;
 
                 

@@ -10,9 +10,9 @@
             this.Noofseats = noofseats;
         }
 
-                public  override string Toprint()
+        public  override string Toprint()
         {
-            return base.Toprint() + "No of seats: {Noofseats}";
+            return base.Toprint() + $"No of seats: {Noofseats}";
         }
     }
 }

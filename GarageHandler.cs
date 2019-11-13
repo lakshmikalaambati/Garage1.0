@@ -1,24 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Garage1._0
 {
-    public class GarageHandler : IGarageHandler
+    public class GarageHandler 
     {
-        private Garage<Vehicle> vehicles;
+        private Garage<Vehicle> garage;
 
 
-        internal void CreateGarage(int capacity)
+        public void CreateGarage(int capacity)
         {
-            vehicles = new Garage<Vehicle>(capacity);
-            Console.WriteLine($"Created Garage with Capacity: {capacity}.Length You can Park your Vehicles.");
+            garage = new Garage<Vehicle>(capacity);
+            Console.WriteLine($"Created Garage with {capacity} Capacity.You can Park your Vehicles.");
+            Console.WriteLine(garage.Count);
         }
 
        
 
-        internal void ParkVehicle(string vehicletype,string regno,string color,int noofwheels,int noofengines)
+        public void ParkVehicle(Vehicle vehicle)
         {
-            vehicles.Add(new vehicletype( )
+            Console.WriteLine($"ISFULL VARiable:{garage.IsFull}");
+
+            if (garage.IsFull == false)
+            {
+                garage.Add(vehicle);
+                Console.WriteLine(garage.Count);
+                foreach (var item in garage)
+                {
+                    Console.WriteLine(item.Toprint());
+
+                }
+            }
+            else
+            {
+                Console.WriteLine("garage is full");
+            }
+
+        }
+
+        internal void UnParkVehicle(string regno)
+        {
+            
         }
     }
 }

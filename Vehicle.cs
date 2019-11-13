@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 namespace Garage1._0
 {
-    public class Vehicle : IVehicle
+    public class Vehicle 
     {
         
             public string Regno { get; set; }

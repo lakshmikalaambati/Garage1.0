@@ -15,12 +15,12 @@ namespace Garage1._0
             private readonly int maxcapacity;
             protected readonly List<Vehicle> vehicles;
 
-            public Garage(int capacity)
+            public Garage(int maxcapacity)
             {
 
                 this.maxcapacity = Math.Max(0, maxcapacity);
-                vehicles = new List<Vehicle>(capacity);
-                Console.WriteLine("In garage");
+                vehicles = new List<Vehicle>(maxcapacity);
+                
 
             }
 
@@ -31,16 +31,13 @@ namespace Garage1._0
 
 
 
-            public virtual bool Add(T item)
+            public void Add(T item)
             {
-
-                if (IsFull) return false;
                 vehicles.Add(item);
-                return true;
-
+                
             }
 
-            public bool Remove(T item) => vehicles.Remove(item);
+            public void Remove(T item) => vehicles.Remove(item);
             public IEnumerator<T> GetEnumerator()
             {
                 //return list.GetEnumerator();

@@ -12,7 +12,7 @@
 
         public  override string Toprint()
         {
-            return base.Toprint() + "Length: {Length}";
+            return base.Toprint() + $"Length: {Length}";
         }
     }
 }

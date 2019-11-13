@@ -20,7 +20,6 @@ namespace Garage1._0
 
             Console.WriteLine("Thanks for Visiting");
 
-            Console.ReadKey();
 
 
             
