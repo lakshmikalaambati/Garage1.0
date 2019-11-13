@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,31 +13,41 @@ namespace Garage1._0
     {
 
             private readonly int maxcapacity;
-            protected readonly List<Vehicle> vehicles;
+            protected readonly Vehicle[] vehicles;
 
-            public Garage(int maxcapacity)
-            {
+        public Garage(int maxcapacity)
+        {
 
-                this.maxcapacity = Math.Max(0, maxcapacity);
-                vehicles = new List<Vehicle>(maxcapacity);
-                
-
-            }
+            this.maxcapacity = Math.Max(0, maxcapacity);
+            vehicles = new Vehicle[this.maxcapacity];
+        }
 
 
 
-            public int Count => vehicles.Count;
-            public bool IsFull => maxcapacity <= Count;
+            //public int Count => vehicles.Count;
+            //public bool IsFull => maxcapacity <= Count;
 
 
 
             public void Add(T item)
             {
-                vehicles.Add(item);
-                
+                Console.WriteLine("in lopp");
+                for (int i = 0; i < maxcapacity; i++)
+                {
+                    if(vehicles[i]==null)
+                    { 
+                        vehicles[i] = item;
+                        Console.WriteLine(item.Toprint());
+                    }
+                }
+            
+            //vehicles[indexnum] = item;
+            //return( indexnum + 1);
+
+
             }
 
-            public void Remove(T item) => vehicles.Remove(item);
+            //public void Remove(T item) => vehicles.Remove(item);
             public IEnumerator<T> GetEnumerator()
             {
                 //return list.GetEnumerator();
